@@ -51,7 +51,7 @@ export default function RoomPage({ params }: { params: { roomcode: String } }) {
     axios.get('/api/users/getuser').then((response) => {
       setUser(response.data.data)
     })
-  }, [users]);
+  }, []);
 
   const leaveRoom = () => {
     try {
