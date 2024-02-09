@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html{
+    background:#0f172a ;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center;
+    height: 100vh;
+    color: #fff;
+}
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    background-image: url('../images/overlay.jpg');
+}
+
+  .content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 20px;
+    color: #fff;
+  }
+
+  .gradient{
+    background: linear-gradient(to bottom,  rgba(11, 17, 32, 0.2),rgba(108, 92, 231, 0.2), hsla(293, 76%, 67%, 0.02)); /* Pink, blue, and purple overlay gradient */
+  }
