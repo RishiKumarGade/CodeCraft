@@ -12,7 +12,7 @@ export async function GET(request:NextRequest){
         const user:any = await User.findOne({_id:userId})
             return NextResponse.json({
             message:'roomcode',
-            data:user.joinedroom
+            data:user.joinedSession
         })
     } catch (error:any) {
         return NextResponse.json({error:error.message},{status:400})

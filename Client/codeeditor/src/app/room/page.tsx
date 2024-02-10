@@ -26,21 +26,25 @@ export default function Roompage() {
 
   const [loading,setLoading] = useState(false);
   
-  // const getJoinedRoom = ()=>{
-  //     axios.get('/api/users/getjoinedroom').then(res=>{ 
-  //     if(res.data.data !== null){
-  //       router.push(/room/${(res.data.data)})
-  //     }
-  //    })
-  // }
+  const getJoinedRoom = ()=>{
+      axios.get('/api/users/getjoinedroom').then(res=>{ 
+      if(res.data.data !== null){
+        router.push(`/room/${(res.data.data)}`)
+      }
+     })
+  }
 
   const joinRoom = (roomcode:string)=>{
     try {
+      const r = toast.loading("please wait ...")
       axios.post('/api/users/joinroom',{roomcode}).then(()=>{
+        toast.dismiss(r)
+        toast.success("successfully joined")
       router.push(`/room/${roomcode}`)
       })
       }
     catch (error) {
+      toast.error("something went wrong")
       console.log(error)
     }
   }
@@ -73,7 +77,7 @@ export default function Roompage() {
   }
   }
     useEffect(()=>{
-      // getJoinedRoom()
+      getJoinedRoom()
       getMyRooms()
     },[])
 

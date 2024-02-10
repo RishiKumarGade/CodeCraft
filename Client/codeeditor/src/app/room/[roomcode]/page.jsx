@@ -30,11 +30,11 @@ import { BsFillSendFill } from "react-icons/bs";
 
 const socket = io("http://localhost:3001/");
 
-export default function RoomPage({ params }: { params: { roomcode: String } }) {
+export default function RoomPage({ params }) {
   const room = params.roomcode;
   const router = useRouter();
   const [filename, setFilename] = useState("");
-  const [files, setFiles]: any = useState([]);
+  const [files, setFiles] = useState([]);
   const [viewFile, setViewFile] = useState("");
   const [createFileBox, setCreateFileBox] = useState(false);
   const textRef = useRef(null);
@@ -56,9 +56,13 @@ export default function RoomPage({ params }: { params: { roomcode: String } }) {
 
   const leaveRoom = () => {
     try {
+      const t = toast.loading("please wait...");
       axios.get("/api/users/leaveroom").then((response) => {
-        socket.emit("leave_room", room);
+      socket.emit("leave_room", room);
+      toast.dismiss(t)
+      toast.success("bye bye room");
         router.push("/room");
+        
       });
     } catch (error) {}
   };
@@ -70,7 +74,7 @@ export default function RoomPage({ params }: { params: { roomcode: String } }) {
   };
 
   const getsessiondata = () => {
-    axios.post("/api/users/getsessiondata", { room }).then((res: any) => {
+    axios.post("/api/users/getsessiondata", { room }).then((res) => {
       setUsers(res.data.users);
       if (res.data.files != null) {
         setFiles([...res.data.files]);
@@ -96,9 +100,9 @@ export default function RoomPage({ params }: { params: { roomcode: String } }) {
   // --------------------------------------------------------------------------------------------
 
   const updateChange = (
-    type: string,
-    filename: string,
-    data: string | null
+    type,
+    filename,
+    data
   ) => {
     if (type == "CREATEFILE") {
       axios
@@ -123,13 +127,13 @@ export default function RoomPage({ params }: { params: { roomcode: String } }) {
     }
   };
 
-  const retrivechange = (type: string, filename: string) => {
+  const retrivechange = (type, filename) => {
     axios
       .post("/api/users/retrivechange", { room, type, filename })
       .then((res) => {
         if (type == "EDIT") {
-          setFiles((prevFiles: any) =>
-            prevFiles.map((file: any) =>
+          setFiles((prevFiles) =>
+            prevFiles.map((file) =>
               file.filename === filename
                 ? {
                     ...res.data.files,
@@ -148,8 +152,8 @@ export default function RoomPage({ params }: { params: { roomcode: String } }) {
   };
 
   const removeLock = (name, cursor, filename) => {
-    setLocks((prevlocks: any) =>
-      prevlocks.map((lock: any) =>
+    setLocks((prevlocks) =>
+      prevlocks.map((lock) =>
         lock &&
         lock.filename === filename &&
         lock.name == name &&
@@ -178,13 +182,13 @@ export default function RoomPage({ params }: { params: { roomcode: String } }) {
     socket.on("create_file_response", (data) => {
       retrivechange(data.type, data.filename);
     });
-    socket.on("edit_content_response", (data: any) => {
+    socket.on("edit_content_response", (data) => {
       retrivechange(data.type, data.filename);
     });
     socket.on("delete_file_response", (data) => {
       retrivechange(data.type, data.filename);
     });
-    socket.on("action_response", (data: any) => {
+    socket.on("action_response", (data) => {
       setLocks([
         ...locks,
         {
@@ -203,7 +207,7 @@ export default function RoomPage({ params }: { params: { roomcode: String } }) {
       );
     });
 
-    socket.on("message_response", (data: any) => {
+    socket.on("message_response", (data) => {
       setMessages([
         ...messages,
         { username: data.username, message: data.message, icon: data.icon },
@@ -221,7 +225,7 @@ export default function RoomPage({ params }: { params: { roomcode: String } }) {
     }
   };
 
-  const deleteFile = (filename: string) => {
+  const deleteFile = (filename) => {
     if (filename != viewFile) {
       let a = [];
       files.map((file) => {
@@ -241,8 +245,8 @@ export default function RoomPage({ params }: { params: { roomcode: String } }) {
   };
 
   const handleContentChangeForReal = (data, filename) => {
-    setFiles((prevFiles: any) =>
-      prevFiles.map((file: any) =>
+    setFiles((prevFiles) =>
+      prevFiles.map((file) =>
         file.filename === filename
           ? {
               ...file,
@@ -256,7 +260,7 @@ export default function RoomPage({ params }: { params: { roomcode: String } }) {
     updateLineNumbers();
   };
 
-  const handleContentChange = (e, filename: string) => {
+  const handleContentChange = (e, filename) => {
     let a = true;
     locks.map((lock) => {
       if (lock) {
@@ -487,7 +491,7 @@ export default function RoomPage({ params }: { params: { roomcode: String } }) {
               ></div>
               <div className="h-[100%] w-[92%] 0 p-3">
                 {files &&
-                  files.map((file, index: number) => {
+                  files.map((file, index) => {
                     if (file && file.filename == viewFile) {
                       let fileext = file.filename.split(".");
                       let ext;
@@ -528,7 +532,7 @@ export default function RoomPage({ params }: { params: { roomcode: String } }) {
   );
 }
 
-function isValidFilename(filename: string) {
+function isValidFilename(filename) {
   var validFilenameRegex = /^[a-zA-Z0-9-_\.]+$/;
   return validFilenameRegex.test(filename);
 }

@@ -31,9 +31,10 @@ export default function SignupPage() {
     try {
        
       setLoading(true);
-      axios.post('api/users/signup',user)
-      console.log('succesfully created')
-      router.push('/login')
+      axios.post('api/users/signup',user).then(()=>{
+        toast.success("user successfully created");
+        router.push('/login')
+      })
        
     } catch (error:any) {
       toast.error(error.message)
