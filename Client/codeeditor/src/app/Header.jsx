@@ -9,10 +9,14 @@ import icon2 from '@/images/2.png'
 import icon3 from '@/images/3.png'
 import icon4 from '@/images/4.png'
 import { usePathname } from 'next/navigation';
+import toast from 'react-hot-toast';
+import { useRouter } from 'next/navigation';
+
 
 export default function Header() {
     const [selectIcon,setSelectIcon] = useState(false);
     const [user,setUser] = useState();
+    const router = useRouter();
 
     useEffect(()=>{
         getmyinfo()
@@ -30,9 +34,12 @@ export default function Header() {
       },[])
 
     const logout = () => {
+        const t = toast.loading("please wait...")
         axios.get('/api/users/logout').then(() => {
             localStorage.setItem("name", "");
-            location.reload();
+            toast.dismiss(t)
+            toast.success("successfully logged out")
+            router.push('/')
         });
     };
     const getmyinfo = () => {

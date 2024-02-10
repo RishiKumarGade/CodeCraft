@@ -25,6 +25,9 @@ import icon3 from "@/images/3.png"
 import icon4 from "@/images/4.png"
 import Image from "next/image";
 import { BsFillSendFill } from "react-icons/bs";
+import { MdOutlineDarkMode } from "react-icons/md";
+import { CiLight } from "react-icons/ci";
+
 
 
 
@@ -45,6 +48,7 @@ export default function RoomPage({ params }) {
   const [messages, setMessages] = useState([{}]);
   const [message, setMessage] = useState();
   const [users, setUsers] = useState([]);
+  const [isdark ,  setIsDark] = useState(false);
 
   // --------------------------------------------------------------------------------------------
 
@@ -164,10 +168,7 @@ export default function RoomPage({ params }) {
     );
   };
 
-  const setIconAtLine = (filename, cursorPos, icon, username) => {
 
-    
-  };
 
   const removeIconAtLine = (filename, cursorPos, icon, username) => {
     files.map((file) => {
@@ -323,8 +324,10 @@ export default function RoomPage({ params }) {
     <>
       <div className="h-screen content dark:bg-gradient-to-r dark:from-blue-800 dark:to-indigo-900 p-10 pt-4  dark:text-[#e9e9f9]">
         <Header />
+
         <div className="h-[87%] w-full  flex flex-row">
           <div className=" dark:bg-[#212141] h-[100%] w-[5%] p-4 flex flex-col justify-start rounded-lg">
+
             <CiChat1
               onClick={() => {
                 setMode("CHAT");
@@ -344,10 +347,18 @@ export default function RoomPage({ params }) {
               size={40}
               className="bg-slate-300 mb-3 dark:text-black p-2 rounded-lg hover:bg-red-500/80 "
             />
+          <button onClick={()=>setIsDark(!isdark)}>{isdark? <><MdOutlineDarkMode size={40}
+              className={` mb-3 ${isdark? "hover:bg-slate-300 bg-slate-500/80":"bg-slate-300 hover:bg-slate-500/80 "} dark:text-black p-2 rounded-lg  `} /></>:
+              <><CiLight size={40}
+              className={` mb-3 ${isdark? "hover:bg-slate-300 bg-slate-500/80":"bg-slate-300 hover:bg-slate-500/80 "} dark:text-black p-2 rounded-lg  `} /></>}</button>
+
           </div>
           {mode == "FILES" ? (
             <>
               <div className="  dark:bg-[#21214140] border  border-slate-400 h-[100%] w-[17%] rounded-lg flex flex-col p-2 font-bold text-slate-500">
+                <div  className="flex justify-evenly">
+                  Roomcode: <p className="text-[#b5daff]">{room}</p>
+                </div>
                 <div className="flex flex-row items-center justify-center w-[90%] mb-8 m-[3%] h-8">
                   {createFileBox ? (
                     <>
@@ -374,6 +385,8 @@ export default function RoomPage({ params }) {
                     </>
                   ) : (
                     <>
+
+                    
                       <div
                         onClick={() => {
                           setCreateFileBox(!createFileBox);
@@ -513,7 +526,12 @@ export default function RoomPage({ params }) {
                           autoComplete="off"
                           language={ext}
                           ref={textRef}
-                          className="w-[100%] h-[100%] bg-white/10  border backdrop-blur-xl border-black rounded-md"
+                          style={
+                           {
+                             backgroundColor:`${isdark ? "#212141":"#faebefff"}`
+                            }
+                          }
+                          className="w-[100%] h-[100%]   border backdrop-blur-xl border-black rounded-md"
                           value={file.data}
                           onChange={(e) => {
                             e.preventDefault();

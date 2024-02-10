@@ -29,12 +29,14 @@ export default function SignupPage() {
   const onSignup = async ()=>{
 
     try {
-       
+     const t =  toast.loading("please wait...");
       setLoading(true);
       axios.post('api/users/signup',user).then(()=>{
+        toast.dismiss(t)
         toast.success("user successfully created");
         router.push('/login')
       })
+      
        
     } catch (error:any) {
       toast.error(error.message)
@@ -74,7 +76,7 @@ export default function SignupPage() {
                         <input
                         id='username' value={user.username} onChange={(e)=>setUser({...user,username:e.target.value})}
                             type="text"
-                            className="w-full px-4 py-2 mt-2 bg-[#1e293b] rounded-md text-[#8f9eb3] rounded-full focus:outline-none focus:ring focus:ring-opacity-40"
+                            className="w-full px-4 py-2 mt-2 bg-[#1e293b] rounded-md text-[#8f9eb3] focus:outline-none focus:ring focus:ring-opacity-40"
                         />
                     </div>
                     <div className="mb-2">
@@ -86,7 +88,7 @@ export default function SignupPage() {
                         <input
                         id='email' value={user.email} onChange={(e)=>setUser({...user,email:e.target.value})} 
                             type="email"
-                            className="w-full px-4 py-2 mt-2 bg-[#1e293b] rounded-md text-[#8f9eb3] rounded-full focus:outline-none focus:ring focus:ring-opacity-40"
+                            className="w-full px-4 py-2 mt-2 bg-[#1e293b] rounded-md text-[#8f9eb3]  focus:outline-none focus:ring focus:ring-opacity-40"
                         />
                     </div>
                     <div className="mb-2">

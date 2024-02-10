@@ -9,6 +9,10 @@ import CodeEditor from '@uiw/react-textarea-code-editor';
 
 
 export default function LoginPage() {
+
+  const[language , setLanguage] = useState("py")
+  
+
  
   return(
     <>
@@ -46,7 +50,7 @@ export default function LoginPage() {
           
               autoFocus
               autoComplete="off"
-              language="py"
+              language={language}
               className="w-[100%] h-[100%] text-[#b5daff] bg-white/10 border backdrop-blur-xl border-black rounded-md"
             />
             </div>

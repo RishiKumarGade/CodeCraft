@@ -10,9 +10,6 @@ export function middleware(request: NextRequest) {
     if(path ==='/verifyemail'){
       return
     }
-    if(path ==='/test'){
-      return
-    }
     if(path ==='/'){
       return
     }
