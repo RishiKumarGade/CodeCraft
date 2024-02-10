@@ -23,11 +23,12 @@ import icon2 from "@/images/2.png"
 import icon1 from "@/images/1.png"
 import icon3 from "@/images/3.png"
 import icon4 from "@/images/4.png"
-
 import Image from "next/image";
 import { BsFillSendFill } from "react-icons/bs";
 
-const socket = io("https://ss18dqf0-3001.inc1.devtunnels.ms/");
+
+
+const socket = io("http://localhost:3001/");
 
 export default function RoomPage({ params }: { params: { roomcode: String } }) {
   const room = params.roomcode;
@@ -420,9 +421,16 @@ export default function RoomPage({ params }: { params: { roomcode: String } }) {
             <>
               <div className="dark:bg-[#21214140] bg-white/10 backdrop-blur-xl border border-slate-400 h-[100%] w-[17%] rounded-lg flex flex-col font-bold text-slate-500">
                 <div className="w-[100%] h-[30%] ">
-
-                  
-
+                     <p className=" text-white border-b border-white/30" >Users Online</p>  
+                      {users.map((user) =>{
+                        return  <p className="flex item-center m-4 gap-2 justify-center text-[#b5daff]" > 
+                          
+                          {user.icon == "icon1" && <> <Image src={icon1} alt={""} width={20} height={20}  /> </>}
+                          {user.icon == "icon2" && <> <Image src={icon2} alt={""}  width={20} height={20}  /> </>}
+                          {user.icon == "icon3" && <> <Image src={icon3} alt={""}   width={20} height={20} /> </>}
+                          {user.icon == "icon4" && <> <Image src={icon3} alt={""}  width={20} height={20}  /> </>}
+                          {user.username} </p>
+                      })}
                 </div>
                 <div className=" border-t border-slate-300 w-[100%] h-[50%] rounded-md ">
                   {messages &&

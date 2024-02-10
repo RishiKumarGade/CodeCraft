@@ -102,8 +102,8 @@ export default function Roompage() {
                       className="flex items-center justify-between px-4 py-2 border-b border-gray-300"
                     >
                       <p className='text-[#b5daff]'>{room.roomname}</p>
-                      <button className="bg-[#00adf1] text-white px-4 py-2 rounded-xl hover:bg-[#37bcf8]">
-                        <Link href={`/room/${room.roomcode}`}>Join room</Link>
+                      <button onClick={() => joinRoom(room.roomcode)} className="bg-[#00adf1] text-white px-4 py-2 rounded-xl hover:bg-[#37bcf8]">
+                      Join room
                       </button>
                     </div>
                   );

@@ -13,6 +13,7 @@ export async function POST(request:NextRequest){
         const {room} = await request.json();
         const session = await Session.findOne({roomcode: room});
         const users = await User.find({joinedSession:room})
+        
         if(session==null){
             const newSession = new Session({
                 roomcode:room,

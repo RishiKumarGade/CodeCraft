@@ -94,7 +94,7 @@ export default function LoginPage() {
     </label>
 </p>
                     <div className="mt-6">
-                        <button  onClick={onLogin} className="btn w-full h-12 bg-[#00adf1] rounded-full outline-none cursor-pointer text-lg hover:bg-[#37bcf8] font-semibold text-white">
+                        <button  onClick={(e)=>{e.preventDefault();onLogin()}} className="btn w-full h-12 bg-[#00adf1] rounded-full outline-none cursor-pointer text-lg hover:bg-[#37bcf8] font-semibold text-white">
                             Login
                         </button>
                     </div>
