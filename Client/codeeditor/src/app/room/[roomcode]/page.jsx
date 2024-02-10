@@ -528,7 +528,8 @@ export default function RoomPage({ params }) {
                           ref={textRef}
                           style={
                            {
-                             backgroundColor:`${isdark ? "#212141":"#faebefff"}`
+                             backgroundColor:`${isdark ? "#212141":"#faebefee"}`,
+                             color:`${isdark ? "#ffffff":"#000000"}`
                             }
                           }
                           className="w-[100%] h-[100%]   border backdrop-blur-xl border-black rounded-md"

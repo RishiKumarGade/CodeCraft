@@ -25,7 +25,8 @@ const userSchema = new mongoose.Schema({
     forgotPasswordTokenExpiry:Date,
     verifyToken:String,
     verifyTokenExpiry:Date,
-    icon:{type:String,default:"icon1"}
+    icon:{type:String,default:"icon1"},
+    isSigned:{type:Boolean,default:false}
 
 })
 

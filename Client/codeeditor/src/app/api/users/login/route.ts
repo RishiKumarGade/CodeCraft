@@ -16,16 +16,24 @@ export async function POST(request:NextRequest){
         if (!user){
             return NextResponse.json({message:'user does not exist',success:false})
         }
+        if(user.isSigned){
+            return NextResponse.json({message:'Already Signed In Another Device',success:false})
+        }
         const validPassword = await bcryptjs.compare(password,user.password)
         if(!validPassword){
             return NextResponse.json({message:'wrong password',success:false})
         }
+        
+
 
         const tokenData = {
             id : user._id,
             username:user.username,
             email: user.email,
         }
+
+        user.isSigned = true
+        await user.save()
 
         let token
             while (!token) {
