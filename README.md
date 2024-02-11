@@ -1,5 +1,11 @@
 # CODE CRAFT
-  A real-time Collaborative Code Editor
+  A real-time Collaborative Code Editor. This project was made for the BitnBuild Hackathon conducted on 10th February, 2024 by GDSC CVR. 
+- Team name: 404Found
+- Team Members:
+    - [Rishi Kumar Gade](https://github.com/RishiKumarGade)
+    - [Ananya Pappula](https://github.com/Ananya54321)
+    - [Sneha Muthyala](https://github.com/SnehaMuthyala)
+    - [Dhruv S Shah](https://github.com/TheSpecsGuy17)
 
 ## Tech Stack
   - Frontend : html , css, tailwind css, react
@@ -102,16 +108,6 @@
     
 <img width="1470" alt="Screenshot 2024-02-11 at 1 51 28 PM" src="https://github.com/RishiKumarGade/CodeCraft/assets/116152722/ce4ea639-d044-4f3a-8c22-705d7fe404e8">
 
-
-## Acknowledgments
-
-This project was made for the BitnBuild Hackathon conducted on 10th February, 2024 by GDSC CVR. 
-- Team name: 404Found
-- Team Members:
-    - [Rishi Kumar Gade](https://github.com/RishiKumarGade)
-    - [Ananya Pappula](https://github.com/Ananya54321)
-    - [Sneha Muthyala](https://github.com/SnehaMuthyala)
-    - [Dhruv S Shah](https://github.com/TheSpecsGuy17)
     
 ## Credits:
 
