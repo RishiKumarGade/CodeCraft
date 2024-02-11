@@ -2,9 +2,9 @@
 # Real-Time Collaborative Code Editor 🚀💻
 
 ## Tech Stack
-  - Front end: HTML, Tailwind css
-  - Database: MongoDB
-  - Backend:
+  - Frontend : html , css, tailwind css, react
+  - Backend : Next Js , Socket io, node js, typescript
+  - Database : mongodb
     
 ## Installation
 
