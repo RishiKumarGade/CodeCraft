@@ -100,6 +100,8 @@
 
 <img width="1470" alt="Screenshot 2024-02-11 at 1 51 35 PM" src="https://github.com/RishiKumarGade/CodeCraft/assets/116152722/d8eab00c-d5f9-4f39-86e5-79d27c4c7eb4">
     
+<img width="1470" alt="Screenshot 2024-02-11 at 1 51 28 PM" src="https://github.com/RishiKumarGade/CodeCraft/assets/116152722/ce4ea639-d044-4f3a-8c22-705d7fe404e8">
+
 
 ## Acknowledgments
 
