@@ -24,7 +24,7 @@
 
     - For the client:
       ```bash
-      cd codeedit
+      cd codeeditor
       npm install
       ```
 
