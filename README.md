@@ -1,5 +1,5 @@
-## CODE CRAFT
-# Real-Time Collaborative Code Editor 🚀💻
+# CODE CRAFT
+  A real-time Collaborative Code Editor
 
 ## Tech Stack
   - Frontend : html , css, tailwind css, react
@@ -105,13 +105,13 @@
 
 ## Acknowledgments
 
-This project was made for the BitnBuild Hackathon by:
-
-- [Rishi Kumar Gade](https://github.com/RishiKumarGade)
-- [Ananya Pappula](https://github.com/Ananya54321)
-- [Sneha Muthyala](https://github.com/SnehaMuthyala)
-- [Dhruv S Shah](https://github.com/TheSpecsGuy17)
-
+This project was made for the BitnBuild Hackathon conducted on 10th February, 2024 by GDSC CVR. 
+- Team name: 404Found
+- Team Members:
+    - [Rishi Kumar Gade](https://github.com/RishiKumarGade)
+    - [Ananya Pappula](https://github.com/Ananya54321)
+    - [Sneha Muthyala](https://github.com/SnehaMuthyala)
+    - [Dhruv S Shah](https://github.com/TheSpecsGuy17)
     
 ## Credits:
 
