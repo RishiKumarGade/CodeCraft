@@ -91,10 +91,10 @@
 
 ## Acknowledgments
   This project was made for the bitnbuild hackathon by:
-    - [Rishi Kumar Gade](https://github.com/RishiKumarGade)
-    - [Ananya Pappula](https://github.com/Ananya54321)
-    - [Sneha Muthyala](https://github.com/SnehaMuthyala)
-    - [Dhruv S Shah](https://github.com/TheSpecsGuy17)
+    [Rishi Kumar Gade](https://github.com/RishiKumarGade)
+    [Ananya Pappula](https://github.com/Ananya54321)
+    [Sneha Muthyala](https://github.com/SnehaMuthyala)
+    [Dhruv S Shah](https://github.com/TheSpecsGuy17)
     
 ## Credits:
 
