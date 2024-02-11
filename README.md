@@ -41,12 +41,13 @@
 
 ## Features
 
-- **Login and Authentication**:
-  - Custom authentication with secure password hashing 🔐
-  - Single user sign-in functionality ✅
 
 - **Home Page**:
   - Central hub for navigation and overivew of the features 🏠
+
+- **Login and Authentication**:
+  - Custom authentication with secure password hashing 🔐
+  - Single user sign-in functionality ✅
 
 - **Offline Code Editor**:
   - Edit code even when offline 📝
@@ -87,7 +88,18 @@
   - Short description of the project and what we aim to achieve through it 📖
  
 ## Images:
+<img width="1470" alt="Screenshot 2024-02-11 at 1 29 12 PM" src="https://github.com/RishiKumarGade/CodeCraft/assets/116152722/66ba081c-443d-4726-b0a6-87f9f347ad28">
 
+<img width="1470" alt="Screenshot 2024-02-11 at 1 29 38 PM" src="https://github.com/RishiKumarGade/CodeCraft/assets/116152722/5fe9b9c5-b348-4a89-8ea6-7e37e788d021">
+
+<img width="1470" alt="Screenshot 2024-02-11 at 1 30 32 PM" src="https://github.com/RishiKumarGade/CodeCraft/assets/116152722/e93263e9-9c91-43d2-a34c-9f6dfb110d02">
+
+<img width="1470" alt="Screenshot 2024-02-11 at 1 34 11 PM" src="https://github.com/RishiKumarGade/CodeCraft/assets/116152722/7555c70c-7baf-454a-97f4-51e48fe6bed2">
+
+<img width="1470" alt="Screenshot 2024-02-11 at 1 50 53 PM" src="https://github.com/RishiKumarGade/CodeCraft/assets/116152722/e1db2075-06dd-4f1e-b352-b9b5543edaa1">
+
+<img width="1470" alt="Screenshot 2024-02-11 at 1 51 35 PM" src="https://github.com/RishiKumarGade/CodeCraft/assets/116152722/d8eab00c-d5f9-4f39-86e5-79d27c4c7eb4">
+    
 
 ## Acknowledgments
 
